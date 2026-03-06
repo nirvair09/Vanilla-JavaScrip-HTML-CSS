@@ -1,8 +1,18 @@
 body {
   margin: 0;
-  padding: 0;
   font-family: monospace;
   background-color: aliceblue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .container {
@@ -22,29 +32,54 @@ body {
 
 .main {
   display: flex;
-  justify-content: start;
-  margin-left: 40px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 15px;
+  box-sizing: border-box;
 }
 
 .password {
-  width: 70%;
+  flex: 1;
   padding: 10px;
   border: none;
   border-radius: 10px;
 }
 
+.password:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
 .fa-copy {
-  margin-left: 6px;
-  font-size: larger;
+  font-size: 20px;
   cursor: pointer;
-  padding-top: 6px;
+  transition: all 0.3s ease;
+}
+
+.fa-copy:hover {
+  color: rgb(255, 255, 255);
+  transform: scale(1.2);
+}
+
+.fa-copy:active {
+  transform: scale(0.9);
 }
 
 .btn {
-  margin-left: 100px;
-  margin-top: 5px;
-  padding: 10px;
+  display: block;
+  margin: 15px auto;
+  padding: 10px 18px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(31, 226, 57);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: scale(0.9);
 }

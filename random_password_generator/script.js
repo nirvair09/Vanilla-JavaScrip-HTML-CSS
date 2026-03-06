@@ -18,5 +18,10 @@ generateBtn.addEventListener("click", generatePassword);
 
 copyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(input.value);
-    alert("Password Copied to Clipboard!");
-})
+    copyBtn.style.color = "lightgreen";
+
+    setTimeout(() => {
+        copyBtn.style.color = "black"
+    }, 1000);
+});
+
