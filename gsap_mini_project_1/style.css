@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #0a0a11;
+  overflow:hidden;
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Anton", sans-serif;
+  position: fixed;
+  top: 0;
+  padding: 10px 20px;
+}
+
+.logo {
+  width: 250px;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  align-items: cehnter;
+  gap: 30px;
+}
+
+.menu .menu-link {
+  text-decoration: none;
+  color: antiquewhite;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.btn {
+  background-color: antiquewhite;
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
+  color: #0a0a11;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: yellowgreen;
+  color: antiquewhite;
+  scale: 1.5;
+  transition: all 0.3s ease;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 55%;
+  margin-inline: auto;
+}
+
+.page h1 {
+  font-family: "Anton", sans-serif;
+  color: white;
+  font-size: 120px;
+  text-decoration: uppercase;
+  line-height: 120px;
+  text-align: center;
+  padding-top: 70px;
+}
+
+.highlight_1,
+.highlight_2,
+.highlight_3 {
+  display: block;
+}
