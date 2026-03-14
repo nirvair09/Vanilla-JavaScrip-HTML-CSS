@@ -59,15 +59,66 @@
               True life is vibrant. It is the color of the sun hitting the
               valley. You don't need to hide anymore. You are home.
             </p>
+            <button class="contact-btn" id="openContactForm">Contact Us</button>
           </div>
           <div class="slide-overlay"></div>
+          
+          <footer class="footer slide-footer">
+            <p>&copy; 2026 nirvair__09.</p>
+          </footer>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <p>&copy; 2026 BREATHE. Live Naturally.</p>
-    </footer>
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content translucent-form">
+        <span class="close-btn" id="closeContactForm">&times;</span>
+        <div class="form-wrapper">
+          <h2>Begin Your Journey</h2>
+          <p>
+            Leave the desert behind. Let's talk about your path back to nature.
+          </p>
+
+          <form id="contactForm">
+            <div class="input-group">
+              <input type="text" id="name" required placeholder="Full Name" />
+            </div>
+
+            <div class="input-group">
+              <select id="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="input-group">
+              <input
+                type="tel"
+                id="phone"
+                required
+                placeholder="Phone Number"
+                pattern="[0-9]{10}"
+              />
+            </div>
+
+            <div class="input-group">
+              <input type="text" value="India" readonly class="locked-input" />
+              <small>Available only for residents of India</small>
+            </div>
+
+            <button type="submit" class="submit-btn">SEND REQUEST</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notification Popup -->
+    <div id="notificationPopup" class="notification-popup">
+      <p>Data submitted successfully! A specialist will contact you soon.</p>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
