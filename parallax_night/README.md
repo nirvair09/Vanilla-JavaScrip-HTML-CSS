@@ -22,3 +22,5 @@ This is a **weekend mini frontend project** dedicated to building an interactive
 - `style.css` - Custom styling and scrollbar styles.
 - `script.js` - Parallax scroll logic.
 - `img/` - Assets and layered images forming the parallax depth.
+
+Link: https://nirvair09.github.io/Vanilla-JavaScrip-HTML-CSS/parallax_night/ 

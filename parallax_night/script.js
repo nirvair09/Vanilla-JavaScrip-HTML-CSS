@@ -8,7 +8,7 @@ window.addEventListener("scroll", () => {
     let value = window.scrollY;
 
     stars.style.transform = `translateY(${value * 0.2}px)`;
-    moon.style.transform = `translateY(${value * -0.5}px)`;
+    moon.style.transform = `translate(-50%, -50%) translateY(${value * -0.5}px)`;
     mountains_behind.style.transform = `translateY(${value * -0.15}px)`;
     mountains_front.style.transform = `translateY(${value * 0.03}px)`;
 })
