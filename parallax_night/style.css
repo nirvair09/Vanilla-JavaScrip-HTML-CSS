@@ -22,7 +22,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  display: none; /* Chrome / Edge / Safari */
+  display: none; 
 }
 
 a {
@@ -81,7 +81,7 @@ ul {
 .stars {
   position: absolute;
   inset: 0;
-  background: url("/img/stars.png") center/cover no-repeat;
+  background: url("img/stars.png") center/cover no-repeat;
   z-index: 1;
 }
 
@@ -93,7 +93,7 @@ ul {
   height: 150px;
   width: 150px;
 
-  background: url("/img/moon.png") center/cover no-repeat;
+  background: url("img/moon.png") center/cover no-repeat;
   z-index: 2;
 }
 
@@ -102,7 +102,7 @@ ul {
   bottom: 0;
   width: 100%;
 
-  background: url("/img//mountains_front.png") bottom/contain no-repeat;
+  background: url("img/mountains_front.png") bottom/contain no-repeat;
   height: 100%;
   z-index: 9;
 }
@@ -112,14 +112,14 @@ ul {
   bottom: 50px;
   width: 100%;
 
-  background: url("/img//mountains_behind.png") bottom/contain no-repeat;
+  background: url("img/mountains_behind.png") bottom/contain no-repeat;
   height: 100%;
   z-index: 8;
 }
 
 .info {
   min-height: 100vh;
-  background: url("/img/stars.png") bottom/cover no-repeat;
+  background: url("img/stars.png") bottom/cover no-repeat;
   backdrop-filter: blur(5px);
   color: white;
 
