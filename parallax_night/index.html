@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Night</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+      <div class="scroll-indicator"></div>
+    <header>
+      <a href="#" class="logo">Parallax Night</a>
+      <ul>
+        <li><a href="#home" class="nav-ele">Home</a></li>
+        <li><a href="#about" class="nav-ele">About</a></li>
+        <li><a href="#contact" class="nav-ele">Contact</a></li>
+      </ul>
+    </header>
+
+    <main id="home" class="container">
+      <div class="stars"></div>
+      <div class="moon"></div>
+      <div class="front"></div>
+      <div class="behind"></div>
+    </main>
+
+    <section id="about" class="info">
+      <h2 class="definition">Parallax Night</h2>
+      <p class="description">
+Parallax scrolling is a visual technique used in modern web design to create a
+sense of depth in a two–dimensional webpage. The idea comes from animation and
+game design, where objects that are farther from the viewer appear to move more
+slowly than objects that are closer. When applied to websites, this principle
+is recreated by placing visual elements on different layers and moving them at
+different speeds as the user scrolls through the page.
+
+In this website, the effect is achieved by stacking multiple layers such as the
+stars, the moon, and two mountain ranges. These layers are positioned using CSS
+with absolute positioning and controlled stacking using the z-index property.
+The background stars represent the farthest layer, the moon represents a middle
+layer in the sky, and the mountains form the foreground elements. By assigning
+different movement speeds to each layer, the page simulates the natural motion
+difference that occurs in real-world perspective.
+
+The movement itself is handled using JavaScript. As the user scrolls, the script
+reads the vertical scroll position of the page using the window.scrollY
+property. That value is then multiplied by different factors for each layer and
+applied using CSS transform translations. Distant objects such as the stars
+move very slowly, the moon moves at a moderate speed, and the foreground
+mountains move the most. This difference in motion creates the illusion that
+the viewer is looking into a deep landscape rather than a flat webpage.
+
+      <br></br>
+Technically, the layout is built using HTML for structure, CSS for styling and
+layer positioning, and JavaScript to update element positions during scrolling.
+Images are used as background layers, while CSS transforms ensure smooth
+animation performance. Together these techniques create an immersive parallax
+scene where the night sky, moon, and mountains appear to shift naturally as the
+user scrolls down the page.
+</p>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
