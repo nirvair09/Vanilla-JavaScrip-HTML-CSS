@@ -23,6 +23,10 @@ body {
   margin-bottom: 10px;
   border-radius: 5px;
   overflow: hidden;
+/* 
+  display: flex;
+  align-items: center;
+  justify-content: space-between; */
 }
 
 .question {
@@ -30,13 +34,33 @@ body {
   cursor: pointer;
   font-weight: bold;
   background: #eee;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .answer {
-  padding: 15px;
-  display: none;
+  
+  max-height:0;
+  overflow: hidden;
+  transition: max-height 0.4s ease,padding 0.4s ease;
+
+  padding: 0 15px;
 }
 
 .item.active .answer {
-  display: block;
+  max-height: 200px;
+  padding: 15px;
+}
+
+.question::after{
+  content:"+";
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.item.active .question::after{
+  content:"-";
 }
