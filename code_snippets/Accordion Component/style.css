@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion {
+  width: 100vw;
+  margin: 100px auto;
+}
+
+.item {
+  background: white;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.question {
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #eee;
+}
+
+.answer {
+  padding: 15px;
+  display: none;
+}
+
+.item.active .answer {
+  display: block;
+}
