@@ -1,0 +1,36 @@
+*{
+        box-sizing: border-box;
+        margin: 0;
+        padding:0;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background:#444;
+    color:White;
+}
+
+.container{
+    background-color: #222;
+    padding:20px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+#itemInput{
+    padding: 10px;
+    width: 200px;
+}
+
+#addBtn{
+    background-color: brown;
+    color:white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
