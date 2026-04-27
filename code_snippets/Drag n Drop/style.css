@@ -1,0 +1,23 @@
+body {
+  font-family: Arial;
+}
+
+.container {
+  display: flex;
+  gap: 50px;
+  padding: 50px;
+}
+
+.box {
+  width: 200px;
+  min-height: 200px;
+  border: 2px dashed black;
+  padding: 10px;
+}
+
+.item {
+  padding: 10px;
+  margin: 10px 0;
+  background: lightblue;
+  cursor: grab;
+}
