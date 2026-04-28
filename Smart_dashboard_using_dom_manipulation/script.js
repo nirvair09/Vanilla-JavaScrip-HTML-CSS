@@ -13,8 +13,9 @@ let state = {
     products: [],
     filtered: [],
     page: 1,
+    limit: 10,
     loading: false,
-    limit: 10
+    favourites: JSON.parse(localStorage.getItem("fav")) || []
 };
 
 
@@ -28,7 +29,7 @@ function render() {
     if (state.tab === "products") {
         data = state.filtered;
     } else {
-        data = [];
+        data = state.favourites;
     }
 
     data.forEach(p => {
@@ -36,8 +37,22 @@ function render() {
         div.textContent = p.title;
         div.style.padding = "10px";
         div.style.borderBottom = "1px solid gray";
-        list.appendChild(div);
+        // list.appendChild(div);
 
+        div.oncontextmenu = (e) => {
+            e.preventDefault();
+            const exists = state.favourites.some(f => f.id === p.id)
+
+            if (exists) {
+                return;
+            }
+
+            state.favourites.push(p);
+            localStorage.setItem("fav", JSON.stringify(state.favourites));
+
+        }
+
+        list.appendChild(div);
     });
 }
 
@@ -45,6 +60,8 @@ tabs.forEach(tab => {
     tab.addEventListener("click", () => {
         tabs.forEach(t => t.classList.remove("active"))
         tab.classList.add("active");
+
+        state.tab = tab.textContent.toLocaleLowerCase();
 
         render();
 
