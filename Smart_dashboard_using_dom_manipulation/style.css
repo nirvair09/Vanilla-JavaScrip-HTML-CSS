@@ -85,3 +85,32 @@ body{
     padding: 20px;
     border-bottom: 1px solid #ddd;
 }
+
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.588);
+  justify-content: center;
+  align-items: center;
+
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  position: relative;
+  border-radius: 10px;
+}
+
+#closeModal {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}

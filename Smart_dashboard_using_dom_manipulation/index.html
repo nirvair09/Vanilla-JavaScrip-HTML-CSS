@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="logo">DashBoard</div>
@@ -26,11 +28,20 @@
     <div class="tabs">
         <div class="tab active" data-tab="tab1">Products</div>
         <div class="tab " data-tab="tab2">Favourite</div>
-     
+
     </div>
 
     <div id="list"></div>
-    
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span id="closeModal">✖</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalPrice"></p>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>

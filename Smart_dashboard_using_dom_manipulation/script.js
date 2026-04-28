@@ -37,6 +37,7 @@ function render() {
         div.textContent = p.title;
         div.style.padding = "10px";
         div.style.borderBottom = "1px solid gray";
+        div.style.cursor = "pointer";
         // list.appendChild(div);
 
         div.oncontextmenu = (e) => {
@@ -50,6 +51,10 @@ function render() {
             state.favourites.push(p);
             localStorage.setItem("fav", JSON.stringify(state.favourites));
 
+        }
+
+        div.onclick = () => {
+            openModal(p);
         }
 
         list.appendChild(div);
@@ -67,6 +72,9 @@ tabs.forEach(tab => {
 
     })
 })
+
+
+
 
 
 
@@ -147,3 +155,36 @@ window.addEventListener("scroll", () => {
         fetchData();
     }
 });
+
+
+
+
+
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalPrice = document.getElementById("modalPrice");
+
+
+function openModal(item) {
+    modalTitle.textContent = item.title;
+    modalPrice.textContent = `$ ${item.price}`;
+
+    modal.classList.add("active");
+}
+
+closeModal.addEventListener("click", () => {
+    modal.classList.remove("active");
+})
+
+modal.onclick = (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("active");
+    }
+}
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        modal.classList.remove("active");
+    }
+})
