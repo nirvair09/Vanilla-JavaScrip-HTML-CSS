@@ -29,6 +29,23 @@ body{
     font-size: 25px;
 }
 
+.tabs{
+    display:flex;
+}
+
+.tab{
+    padding:10px;
+    cursor:pointer;
+    border:none;
+    background: darkslateblue;
+    color:white;
+    flex:1;
+}
+
+.tab.active{
+    background-color: rgb(61, 6, 131);
+}
+
 @media(max-width:768px){
     .menu{
         position: absolute;
