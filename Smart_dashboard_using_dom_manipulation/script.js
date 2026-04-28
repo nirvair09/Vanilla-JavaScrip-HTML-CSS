@@ -63,3 +63,29 @@ async function fetchData() {
 }
 
 fetchData();
+
+
+function debouncedSearch(fn, delay) {
+    let timer;
+
+    return function (...arg) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            fn(...arg)
+        }, delay);
+    };
+}
+
+
+const searchInput = document.getElementById("searchBar");
+
+searchInput.addEventListener("input", debouncedSearch((e) => {
+    const query = e.target.value.toLowerCase();
+    // if (query === "") {
+    //     state.filtered = state.products
+    // }
+    state.filtered = state.products.filter(item =>
+        item.title.toLowerCase().includes(query))
+
+    render();
+}, 500));
