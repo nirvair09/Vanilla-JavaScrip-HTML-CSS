@@ -76,3 +76,12 @@ body{
         display:block;
     }
 }
+
+/* style.css */
+#list div {
+    min-height: 50px; /* Make them beefy so they fill the screen */
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}

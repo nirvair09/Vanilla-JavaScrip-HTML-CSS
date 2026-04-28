@@ -11,7 +11,10 @@ hamburger.addEventListener("click", () => {
 let state = {
     tab: "products",
     products: [],
-    filtered: []
+    filtered: [],
+    page: 1,
+    loading: false,
+    limit: 10
 };
 
 
@@ -51,15 +54,25 @@ tabs.forEach(tab => {
 
 
 async function fetchData() {
+    if (state.loading) return;
+
+    state.loading = true;
+
+    const skip = (state.page - 1) * state.limit;
+    const limit = state.limit;
+
     try {
-        const response = await fetch("https://dummyjson.com/products?limit=10");
+        const response = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
         const data = await response.json();
-        state.products = data.products;
-        state.filtered = data.products;
+        state.products = [...state.products, ...data.products];
+        state.filtered = state.products;
+        state.page++;
         render();
     } catch (error) {
         console.log(error);
     }
+
+    state.loading = false;
 }
 
 fetchData();
@@ -89,3 +102,31 @@ searchInput.addEventListener("input", debouncedSearch((e) => {
 
     render();
 }, 500));
+
+
+// window.addEventListener("scroll", () => {
+//     const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+//     if (nearBottom && !state.loading) {
+//         fetchData();
+//     }
+// });
+
+
+window.addEventListener("scroll", () => {
+    // 1. Use documentElement.scrollHeight (more reliable)
+    // 2. Add a threshold of 100px so it triggers slightly BEFORE you hit the dead bottom
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const threshold = 100;
+    const totalHeight = document.documentElement.scrollHeight;
+
+    const nearBottom = scrollPosition >= (totalHeight - threshold);
+
+    // Only fetch more if we aren't loading AND if we aren't currently searching
+    // (Infinite scroll usually shouldn't trigger during a filtered search)
+    const isSearching = searchInput.value.length > 0;
+
+    if (nearBottom && !state.loading && !isSearching) {
+        fetchData();
+    }
+});
